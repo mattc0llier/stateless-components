@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Player extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     window.onYouTubeIframeAPIReady = () => {
       this.player = new YT.Player('player', {
         height: '390',
@@ -12,20 +12,24 @@ class Player extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     const { videoId } = nextProps;
-    if(videoId !== this.props.videoId){
-      this.player.loadVideoById( videoId );
+    if (videoId !== this.props.videoId) {
+      this.player.loadVideoById(videoId);
     }
   }
 
-  render(){
+  render() {
     return (
       <div>
-        <div id="player"></div>
+        <div id="player" />
       </div>
     );
   }
+}
+
+Player.propTypes = {
+  videoId: PropTypes.string
 };
 
 export default Player;

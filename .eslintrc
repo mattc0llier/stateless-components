@@ -11,6 +11,8 @@
   ],
   "rules": {
     "semi": ["warn", "always"],
-    "quotes": ["warn", "single"]
+    "quotes": ["warn", "single"],
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": false }],
+    "react/prop-types": [1]
   }
 }

@@ -3,7 +3,7 @@ import Player from './Player';
 import Search from './Search';
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
 
     this.state = {
@@ -13,13 +13,13 @@ class App extends React.Component {
     this.playVideo = this.playVideo.bind(this);
   }
 
-  playVideo(videoId){
+  playVideo(videoId) {
     this.setState({
       videoId: videoId
     });
   }
 
-  render(){
+  render() {
     return (
       <div className="row">
         <div className="col-12 d-flex justify-content-center">

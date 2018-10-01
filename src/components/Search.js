@@ -2,9 +2,10 @@ import React from 'react';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import search from '../services/search';
+import PropTypes from 'prop-types';
 
 class Search extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -16,24 +17,23 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState({
       query: event.target.value
     });
   }
 
-  handleSubmit(event){
+  handleSubmit(event) {
     event.preventDefault();
 
-    search(this.state.query)
-      .then(results => {
-        this.setState({
-          results: results.items
-        });
+    search(this.state.query).then(results => {
+      this.setState({
+        results: results.items
       });
+    });
   }
 
-  render(){
+  render() {
     return (
       <div>
         <SearchBar
@@ -48,6 +48,10 @@ class Search extends React.Component {
       </div>
     );
   }
+}
+
+Search.propTypes = {
+  playVideo: PropTypes.func
 };
 
 export default Search;
